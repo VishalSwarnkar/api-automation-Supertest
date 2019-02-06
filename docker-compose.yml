@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  integration-test:
+    image: node
+    environment:
+      - NODE_ENV=mock
+    volumes:
+      - ./:/api_automation
+    working_dir: /api_automation
+    command: ["npm", "run", "test-mock"]
