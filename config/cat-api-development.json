@@ -1,7 +1,6 @@
 {
     "app":{
         "baseurl":"https://api.thecatapi.com",
-        "proxy-url":"http://internetpu:8085",
         "api-key":"api-key"
     }
 }

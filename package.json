@@ -4,8 +4,8 @@
   "description": "Jest demo",
   "main": "app.js",
   "scripts": {
-    "test-mock": "set NODE_ENV=mock& jest --config ./jest-conf.js",
-    "test-proxy": "set NODE_ENV=cat-api-production& jest --config ./jest-conf.js"
+    "test": "set NODE_ENV=mock& jest --config ./jest-conf.js",
+    "development": "set NODE_ENV=cat-api-development& jest --config ./jest-conf.js"
   },
   "author": "",
   "license": "ISC",
