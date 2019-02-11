@@ -11,20 +11,20 @@ npm install or npm i //This will install all required modules as specified in "p
 ```
 ## Environments to run the test against:
 ```
-Mock env : npm run test-mock
+Mock env : npm test
 ```
 ```
-Test env : npm run test-dev
+Test env : npm run development
 ```
 
 ## Run a specific file or pattern
 ```
-npm run test-dev file_name/file_name_pattern
+npm test file_name/file_name_pattern
 ```
 
 ## Run specific test or tests of a particular pattern
 ```
-npm run test-dev -- -t test_name/pattern
+npm run development -- -t test_name/pattern
 ```
 
 ## Run tests in docker
