@@ -1,4 +1,4 @@
-'use-strict';
+//'use-strict';
 
 const nock = require('nock');
 const mockHost = "http://api.example.com"
