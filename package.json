@@ -4,7 +4,7 @@
   "description": "Jest demo",
   "main": "app.js",
   "scripts": {
-    "test": "set NODE_ENV=mock& jest --config ./jest-conf.js",
+    "test": "set NODE_ENV=mock& jest --config ./jest-conf.js --coverage",
     "development": "set NODE_ENV=cat-api-development& jest --config ./jest-conf.js"
   },
   "author": "",
@@ -20,6 +20,7 @@
   "dependencies": {
     "chai": "^4.2.0",
     "config": "^3.0.0",
+    "jest-joi-schema": "^1.0.0",
     "joi": "^14.3.1",
     "winston": "^3.1.0"
   }

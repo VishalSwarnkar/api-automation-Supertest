@@ -123,7 +123,7 @@ const mocks = {
 				{ id: 7, name: 'ties' }]
 			)
 	},
-	
+
 	listAllFavourities() {
 		return nock(mockHost).defaultReplyHeaders({
 			'date': 'Fri, 07 Dec 2018 04:08:48 GMT',
@@ -221,13 +221,13 @@ const mocks = {
 		return nock(mockHost)
 			.get('/v1/categories?limit=2&page=1')
 			.reply(200, [
-				{ 
-					id: 1, 
-					name: 'hats' 
-				}, 
-				{ 
-					id: 14, 
-					name: 'sinks' 
+				{
+					id: 1,
+					name: 'hats'
+				},
+				{
+					id: 14,
+					name: 'sinks'
 				}
 			])
 	},

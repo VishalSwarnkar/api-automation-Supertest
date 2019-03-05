@@ -8,4 +8,4 @@ services:
     volumes:
       - ./:/api_automation
     working_dir: /api_automation
-    command: ["npm", "run", "test-mock"]
+    command: ["npm", "test"]

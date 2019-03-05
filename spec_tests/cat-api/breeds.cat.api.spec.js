@@ -1,7 +1,7 @@
 const superTest = require('supertest'),
 config = require('config'),
 request = superTest(global.ENV),
-mocks = require('../fixtures/http_mocks');
+mocks = require('../fixtures/http_mocks')
 
 jest.setTimeout(10000);
 
