@@ -1,6 +1,5 @@
 {
     "app":{
-        "baseurl":"http://api.example.com",
-        "api-key":"123446"
+        "baseurl":"http://api.example.com"
     }
 }

@@ -1,6 +1,5 @@
 {
     "app":{
-        "baseurl":"https://api.thecatapi.com",
-        "api-key":"api-key"
+        "baseurl":"https://api.thecatapi.com"
     }
 }

@@ -1,7 +1,8 @@
 const superTest = require('supertest'),
 config = require('config'),
 request = superTest(global.ENV),
-mocks = require('../fixtures/http_mocks');
+mocks = require('../fixtures/http_mocks'),
+api_key = global.APIKEY;
 
 describe('Favourites route', ()=>{
     var image_id = 833;
@@ -11,7 +12,7 @@ describe('Favourites route', ()=>{
         mocks.use(['listAllFavourities']);
 
         request.get('/v1/favourites')
-        .set("X-Api-Key", config.get("app.api-key"))
+        .set("X-Api-Key", api_key)
         .end( (err, res) =>{
             if(err) done.fail(err);
             expect(res.status).toBe(200);
@@ -27,7 +28,7 @@ describe('Favourites route', ()=>{
         .send({
             "image_id": "asf2",
         })
-        .set("X-Api-Key", config.get("app.api-key"))
+        .set("X-Api-Key", api_key)
         .end( (err, res) =>{
             if(err) done.fail(err);
             expect(res.status).toBe(200);
@@ -44,7 +45,7 @@ describe('Favourites route', ()=>{
         mocks.use(['listAllFavourities']);
 
         request.get('/v1/favourites')
-        .set("X-Api-Key", config.get("app.api-key"))
+        .set("X-Api-Key", api_key)
         .end( (err, res) =>{
             if(err) done.fail(err);
             expect(res.status).toBe(200);
@@ -58,7 +59,7 @@ describe('Favourites route', ()=>{
         mocks.use(['getSpecificImage']);
 
         request.get('/v1/favourites/' + image_id)
-        .set("X-Api-Key", config.get("app.api-key"))
+        .set("X-Api-Key", api_key)
         .end( (err, res) =>{
             if(err) done.fail(err);
             expect(res.status).toBe(200);
@@ -72,7 +73,7 @@ describe('Favourites route', ()=>{
         mocks.use(['deleteSpecificImage']);
 
         request.delete('/v1/favourites/' + image_id)
-        .set("X-Api-Key", config.get("app.api-key"))
+        .set("X-Api-Key", api_key)
         .end( (err, res) =>{
             if(err) done.fail(err);
             expect(res.status).toBe(200);

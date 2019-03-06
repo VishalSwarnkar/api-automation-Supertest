@@ -1,7 +1,8 @@
 const superTest = require('supertest'),
 config = require('config'),
 request = superTest(global.ENV),
-mocks = require('../fixtures/http_mocks');
+mocks = require('../fixtures/http_mocks'),
+api_key = global.APIKEY;
 
 describe('Votes route', ()=>{
     var vote_id = 47127;
@@ -15,7 +16,7 @@ describe('Votes route', ()=>{
             "image_id": "asf2",
             "value": 1
         })
-        .set("X-Api-Key", config.get("app.api-key"))
+        .set("X-Api-Key", api_key)
         .end( (err, res) =>{
             if(err) done.fail(err);
             expect(res.status).toBe(200);
@@ -29,7 +30,7 @@ describe('Votes route', ()=>{
         mocks.use(['listAllVotes']);
 
         request.get('/v1/votes')
-        .set("X-Api-Key", config.get("app.api-key"))
+        .set("X-Api-Key", api_key)
         .end( (err, res) =>{
             if(err) done.fail(err);
             expect(res.status).toBe(200);
@@ -43,7 +44,7 @@ describe('Votes route', ()=>{
         mocks.use(['getSpecificVote']);
 
         request.get('/v1/votes/47127')
-        .set("X-Api-Key", config.get("app.api-key"))
+        .set("X-Api-Key", api_key)
         .end( (err, res) =>{
             if(err) done.fail(err);
             expect(res.status).toBe(200);
@@ -57,7 +58,7 @@ describe('Votes route', ()=>{
         mocks.use(['deleteVote']);
 
         request.delete('/v1/votes/47127')
-        .set("X-Api-Key", config.get("app.api-key"))
+        .set("X-Api-Key", api_key)
         .end( (err, res) =>{
             if(err) done.fail(err);
             expect(res.status).toBe(200);

@@ -1,7 +1,8 @@
 const superTest = require('supertest'),
 config = require('config'),
 request = superTest(global.ENV),
-mocks = require('../fixtures/http_mocks')
+mocks = require('../fixtures/http_mocks'),
+api_key = global.APIKEY;
 
 jest.setTimeout(10000);
 
@@ -15,7 +16,7 @@ describe('Breeds route', ()=>{
         mocks.use(['listAllCatBreeds']);
 
         request.get('/v1/breeds')
-        .set("X-Api-Key", config.get("app.api-key"))
+        .set("X-Api-Key", api_key)
         .end( (err, res) =>{
             if(err) done.fail(err);
             expect(res.status).toBe(200);
@@ -28,7 +29,7 @@ describe('Breeds route', ()=>{
         mocks.use(['limitedBreeds']);
 
         request.get('/v1/breeds?limit=' + response_limit + '&page=' + page_limit)
-        .set("X-Api-Key", config.get("app.api-key"))
+        .set("X-Api-Key", api_key)
         .end( (err, res) =>{
             if(err) done.fail(err);
             expect(res.status).toBe(200);

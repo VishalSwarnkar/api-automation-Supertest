@@ -2,7 +2,8 @@ const superTest = require('supertest'),
 config = require('config'),
 request = superTest(global.ENV),
 mocks = require('../fixtures/http_mocks'),
-Joi = require('joi');
+Joi = require('joi'),
+api_key = global.APIKEY;
 
 jest.setTimeout(10000);
 
@@ -18,7 +19,7 @@ describe('Schema validation', ()=>{
       });
 
       request.get('/v1/breeds')
-      .set("X-Api-Key", config.get("app.api-key"))
+      .set("X-Api-Key", api_key)
       .end( (err, res) =>{
           if(err) done.fail(err);
           expect(res.status).toBe(200);
@@ -37,7 +38,7 @@ describe('Schema validation', ()=>{
       }]);
 
       request.get('/v1/categories')
-      .set("X-Api-Key", config.get("app.api-key"))
+      .set("X-Api-Key", api_key)
       .end( (err, res) =>{
           if(err) done.fail(err);
           expect(res.status).toBe(200);
@@ -64,7 +65,7 @@ describe('Schema validation', ()=>{
       }]);
 
       request.get('/v1/favourites')
-      .set("X-Api-Key", config.get("app.api-key"))
+      .set("X-Api-Key", api_key)
       .end( (err, res) =>{
           if(err) done.fail(err);
           expect(res.status).toBe(200);

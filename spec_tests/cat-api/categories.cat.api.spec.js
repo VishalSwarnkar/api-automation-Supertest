@@ -2,7 +2,8 @@ const superTest = require('supertest'),
 config = require('config'),
 request = superTest(global.ENV),
 mocks = require('../fixtures/http_mocks'),
-helper = require('../common/helper');
+helper = require('../common/helper'),
+api_key = global.APIKEY;
 
 describe('Categories route', ()=>{
 
@@ -19,7 +20,7 @@ describe('Categories route', ()=>{
         mocks.use(['listAllCategories']);
 
         request.get('/v1/categories')
-        .set("X-Api-Key", config.get("app.api-key"))
+        .set("X-Api-Key", api_key)
         .end( (err, res) =>{
             if(err) done.fail(err);
             expect(res.status).toBe(200);
@@ -33,7 +34,7 @@ describe('Categories route', ()=>{
         mocks.use(['limitedCategories']);
 
         request.get('/v1/categories?limit=2&page=1')
-        .set("X-Api-Key", config.get("app.api-key"))
+        .set("X-Api-Key", api_key)
         .end( (err, res) =>{
             if(err) done.fail(err);
             expect(res.status).toBe(200);
@@ -47,7 +48,7 @@ describe('Categories route', ()=>{
       mocks.use(['listAllCategories']);
 
       request.get('/v1/categories')
-      .set("X-Api-Key", config.get("app.api-key"))
+      .set("X-Api-Key", api_key)
       .end( (err, res) => {
         if(err) done.fail(err);
         expect(res.status).toBe(200);

@@ -16,6 +16,7 @@ module.exports = {
       "fixtures"
     ],
     "globals": {
-      "ENV": config.get("app.baseurl")
+      "ENV": config.get("app.baseurl"),
+      "APIKEY": process.env.APIKEY
     }
 }
