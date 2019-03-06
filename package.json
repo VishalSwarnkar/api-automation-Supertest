@@ -4,7 +4,7 @@
   "description": "Jest demo",
   "main": "app.js",
   "scripts": {
-    "test": "set NODE_ENV=mock& jest --config ./jest-conf.js --coverage",
+    "test": "NODE_ENV=mock& jest --config ./jest-conf.js --coverage",
     "development": "set NODE_ENV=cat-api-development& jest --config ./jest-conf.js"
   },
   "author": "",
