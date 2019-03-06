@@ -15,7 +15,8 @@
     "nock": "^10.0.2",
     "superagent": "^4.0.0",
     "superagent-proxy": "^2.0.0",
-    "supertest": "^3.3.0"
+    "supertest": "^3.3.0",
+    "config": "^3.0.0"
   },
   "dependencies": {
     "chai": "^4.2.0",
