@@ -5,7 +5,7 @@ var file = require('fs'),
 	mocks = require('../fixtures/http_mocks');
 
 
-describe('JEST Demo', ()=>{
+describe('Invalid Scenarios', ()=>{
 	console.log(config.get("app.baseurl"));
 
 	test('It should get 200 status code', (done) =>{
