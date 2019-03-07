@@ -79,7 +79,7 @@ describe('Invalid Scenarios', ()=>{
         fail('this function will never be called.');
       })
       .catch(function (err) {
-        // expect(err.message).toMatch(/^Invalid json response /);
+        expect(err.message).toMatch(/^Invalid json response /);
         expect(err.message).toMatch(/body: '.*'/);
         expect(err.message).toMatch(/reason: '.+'/);
       })
