@@ -29,7 +29,7 @@ describe('Categories route', ()=>{
         });
     });
 
-    it('should return specified limit of data in response body', (done) =>{
+    it('should return in categories specified limit of data in response body', (done) =>{
 
         mocks.use(['limitedCategories']);
 
